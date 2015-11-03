@@ -16,7 +16,7 @@ public class SkeletonApplication extends Application {
         } else {
             // create some sort of crashlytics tree or whatever
         }
-        objectGraph = ObjectGraph.create(new ApplicationModule());
+        objectGraph = ObjectGraph.create(new ApplicationModule(this));
     }
 
     public void inject(Object object) {

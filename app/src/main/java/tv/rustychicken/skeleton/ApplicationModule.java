@@ -1,5 +1,9 @@
 package tv.rustychicken.skeleton;
 
+import android.app.Application;
+
+import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -12,10 +16,16 @@ import retrofit.RestAdapter;
         MainActivity.class
     },
     includes = {},
-    library = false,
+    library = true,
     complete = false
 )
 public class ApplicationModule {
+    Application application;
+
+    ApplicationModule(Application application) {
+        this.application = application;
+    }
+
     @Provides
     @Singleton
     ApiService providesApiService() {
@@ -23,6 +33,12 @@ public class ApplicationModule {
             .setEndpoint("www.google.com")
             .build()
             .create(ApiService.class);
+    }
+
+    @Provides
+    @Singleton
+    ReactiveLocationProvider providesReactiveLocationProvider() {
+        return new ReactiveLocationProvider(application);
     }
 
 }
