@@ -15,6 +15,8 @@ import android.view.MenuItem;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
     @Inject ApiService apiService;
@@ -23,7 +25,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ((SkeletonApplication) getApplication()).inject(this);
+        ButterKnife.bind(this);
+            ((SkeletonApplication) getApplication()).inject(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
