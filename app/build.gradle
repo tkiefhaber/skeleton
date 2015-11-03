@@ -32,7 +32,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    debugCompile 'com.squareup.retrofit:retrofit-mock:1.8.0'
+    debugCompile 'com.squareup.retrofit:retrofit-mock:1.9.0'
     compile 'io.reactivex:rxjava:1.0.10'
     compile 'io.reactivex:rxandroid:0.24.0'
     compile 'pl.charmas.android:android-reactive-location:0.8@aar'
