@@ -2,11 +2,11 @@ package tv.rustychicken.skeleton;
 
 import android.app.Application;
 
-import retrofit.RestAdapter;
+import dagger.ObjectGraph;
 import timber.log.Timber;
 
 public class SkeletonApplication extends Application {
-    private ApiService apiService;
+    private ObjectGraph objectGraph;
 
     @Override
     public void onCreate() {
@@ -16,10 +16,11 @@ public class SkeletonApplication extends Application {
         } else {
             // create some sort of crashlytics tree or whatever
         }
-        apiService = new RestAdapter.Builder().setEndpoint("www.google.com").build().create(ApiService.class);
+        objectGraph = ObjectGraph.create(new ApplicationModule());
     }
 
-    public ApiService getApiService() {
-        return apiService;
+    public void inject(Object object) {
+        objectGraph.inject(object);
     }
+
 }
