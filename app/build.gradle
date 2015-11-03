@@ -36,4 +36,5 @@ dependencies {
     compile 'io.reactivex:rxjava:1.0.10'
     compile 'io.reactivex:rxandroid:0.24.0'
     compile 'pl.charmas.android:android-reactive-location:0.8@aar'
+    compile 'net.orfjackal.retrolambda:retrolambda:2.0.6'
 }
