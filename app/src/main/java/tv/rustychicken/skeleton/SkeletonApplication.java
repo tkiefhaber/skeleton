@@ -14,6 +14,7 @@ public class SkeletonApplication extends Application {
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree());
         } else {
+            Timber.d("do something better");
             // create some sort of crashlytics tree or whatever
         }
         objectGraph = ObjectGraph.create(new ApplicationModule(this));
